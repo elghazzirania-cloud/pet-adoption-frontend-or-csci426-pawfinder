@@ -30,7 +30,7 @@ Static Pages: Includes an "About Us" page detailing the organization's mission a
 7. Login & Signup Pages
  ![image alt](https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder/blob/d96a77f0458ed990ad5320d1143c736064947b34/Login%20page.png)
     
-   ![image alt]()
+   ![image alt](https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder/blob/c2a4e1a906aa52ad865b699ae54509eae5d00034/SignUp%20page.png)
 11. Adoption Form (Protected)
 12.  ![image alt]()
 13. About Us Page
