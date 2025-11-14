@@ -1,10 +1,13 @@
 Paws of Beirut 🐾
+
 Paws of Beirut is a single-page web application (SPA) built with React. It serves as a fictional platform for a pet adoption agency, allowing users to browse available pets, filter them by specific criteria, and submit adoption applications.
 
-Project Overview
+Project Overview:
+
 This application provides a complete front-end experience for a pet adoption service. It features user authentication (simulated with browser storage), a dynamic pet browsing and filtering system, and protected routes for actions like applying for adoption.
 
 ✨ Features
+
 User Authentication: Users can create an account and log in. The system uses localStorage to store user accounts and sessionStorage to manage active login sessions.
 
 Pet Browsing & Filtering: A comprehensive gallery page where users can view all available pets.
@@ -40,7 +43,7 @@ Static Pages: Includes an "About Us" page detailing the organization's mission a
 
 ![image alt](https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder/blob/30f870a14414aaf1710fb80448ac6dddf26ea577/About1%20page.png)
     
- ![image alt]()
+ ![image alt](https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder/blob/11d407620db152f84a89083311fbf8a91af98e54/About2%20page.png)
  
 7.Contact Page
  
