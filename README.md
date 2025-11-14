@@ -8,17 +8,17 @@ This application provides a complete front-end experience for a pet adoption ser
 
 # ✨ Features
 
-User Authentication: Users can create an account and log in. The system uses localStorage to store user accounts and sessionStorage to manage active login sessions.
+1. User Authentication: Users can create an account and log in. The system uses localStorage to store user accounts and sessionStorage to manage active login sessions.
 
-Pet Browsing & Filtering: A comprehensive gallery page where users can view all available pets.
+2. Pet Browsing & Filtering: A comprehensive gallery page where users can view all available pets.
 
-Search & Filter: Users can search for pets by name and apply filters for species (Dog, Cat) and size (Small, Medium, Large).
+3. Search & Filter: Users can search for pets by name and apply filters for species (Dog, Cat) and size (Small, Medium, Large).
 
-Detailed Pet View: Clicking a pet reveals a detailed page with its name, species, description, age, gender, adoption fee, and personality traits.
+4. Detailed Pet View: Clicking a pet reveals a detailed page with its name, species, description, age, gender, adoption fee, and personality traits.
 
-Protected Adoption Form: Only logged-in users can access the adoption application form, which is pre-filled with their information.
+5. Protected Adoption Form: Only logged-in users can access the adoption application form, which is pre-filled with their information.
 
-Static Pages: Includes an "About Us" page detailing the organization's mission and a "Contact" form.
+6. Static Pages: Includes an "About Us" page detailing the organization's mission and a "Contact" form.
 
 # 📸 Screenshots
 ## 1. Home Page
@@ -55,49 +55,34 @@ Static Pages: Includes an "About Us" page detailing the organization's mission a
 
 
 # 🛠️ Technologies Used
-React: The core JavaScript library used for building the user interface.
+>React: The core JavaScript library used for building the user interface.
 
-React Router (react-router-dom): Used for client-side routing and navigation.
+>React Router (react-router-dom): Used for client-side routing and navigation.
 
-React Hooks: (useState, useEffect) for state management and side effects.
+>React Hooks: (useState, useEffect) for state management and side effects.
 
-Lucide React: A library providing lightweight SVG icons.
+>Lucide React: A library providing lightweight SVG icons.
 
-Custom CSS: All styling is handled with custom CSS files using Flexbox and Grid.
+>Custom CSS: All styling is handled with custom CSS files using Flexbox and Grid.
 
-Browser Storage: localStorage and sessionStorage to simulate auth and session.
+>Browser Storage: localStorage and sessionStorage to simulate auth and session.
 
 # 🚀 Deployment
 This application is deployed live on Vercel / Netlify.
 
 Live Link: [Your Deployment URL Here]
+Deployment
+The website is deployed using GitHub Pages and can be accessed at ......
 
 # 🏁 Getting Started
-Follow these instructions to get a copy of the project up and running on your local machine.
+To run the project locally:
 
-Prerequisites
-You must have Node.js (which includes npm) installed on your computer.
+1. Clone this repository: 
+2. Navigate to the project directory: cd petproject
+3. Install dependencies: npm install
+4. Start the development server: npm start
+5. Open your browser and visit: ......
 
-Installation
-Clone the repository:
 
-Bash
 
-git clone https://github.com/your-username/paws-of-beirut.git
-Navigate to the project directory:
-
-Bash
-
-cd paws-of-beirut
-Install dependencies:
-
-Bash
-
-npm install
-Run the application:
-
-Bash
-
-npm start
-This will run the app in development mode. Open http://localhost:3000 to view it in your browser.
 
