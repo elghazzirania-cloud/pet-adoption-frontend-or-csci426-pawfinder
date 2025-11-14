@@ -20,11 +20,13 @@ Static Pages: Includes an "About Us" page detailing the organization's mission a
 📸 Screenshots
 1. Home Page
  ![image alt](https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder/blob/f4d9cb732dc01c0c612a213de03da2407dcded6d/home%20page.png)
-3. Browse Pets Page (with Filters)
-4. Pet Details Page
-5. Login & Signup Pages
-6. Adoption Form (Protected)
-7. About Us Page
+2. Browse Pets Page (with Filters)
+  ![image alt](https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder/blob/fcc522990f4488934a62c8a705bf07176a61b816/BrowsePets%20page.png)
+3. Pet Details Page
+   
+7. Login & Signup Pages
+8. Adoption Form (Protected)
+9. About Us Page
 
 🛠️ Technologies Used
 React: The core JavaScript library used for building the user interface.
