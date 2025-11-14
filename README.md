@@ -68,20 +68,20 @@ This application provides a complete front-end experience for a pet adoption ser
 >Browser Storage: localStorage and sessionStorage to simulate auth and session.
 
 # 🚀 Deployment
-This application is deployed live on Vercel / Netlify.
+This application is deployed live on  Netlify.
 
-Live Link: [Your Deployment URL Here]
+Live Link: [(https://enchanting-kheer-07575f.netlify.app/)]
 Deployment
-The website is deployed using GitHub Pages and can be accessed at ......
-
+The website is deployed using GitHub Pages and can be accessed at[(https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder.git)
+]
 # 🏁 Getting Started
 To run the project locally:
 
-1. Clone this repository: 
+1. Clone this repository: https://github.com/elghazzirania-cloud/pet-adoption-frontend-or-csci426-pawfinder.git
 2. Navigate to the project directory: cd petproject
 3. Install dependencies: npm install
 4. Start the development server: npm start
-5. Open your browser and visit: ......
+5. Open your browser and visit: https://enchanting-kheer-07575f.netlify.app/
 
 
 
