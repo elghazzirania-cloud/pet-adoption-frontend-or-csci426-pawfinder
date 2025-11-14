@@ -86,14 +86,13 @@ const BrowsePets = () => {
   const [speciesFilter, setSpeciesFilter] = useState("All");
   const [sizeFilter, setSizeFilter] = useState("All");
   const [selectedPet, setSelectedPet] = useState(null);
-  const [searchTerm, setSearchTerm] = useState(""); // state للبحث
+  const [searchTerm, setSearchTerm] = useState(""); 
 
-  // اضغط الزر لتعيين الـ pet المختارة
+ 
   function handleDetails(pet) {
     setSelectedPet(pet);
   }
 
-  // هون، اذا في pet مختارة، فرجّع تفاصيلها مباشرة
   if (selectedPet) {
     return (
       <PetDetails pet={selectedPet} onBack={() => setSelectedPet(null)} />
@@ -104,7 +103,7 @@ const BrowsePets = () => {
   (p) =>
     (speciesFilter === "All" || p.species === speciesFilter) &&
     (sizeFilter === "All" || p.size === sizeFilter) &&
-    p.name.toLowerCase().includes(searchTerm.toLowerCase()) // فلتر حسب الاسم
+    p.name.toLowerCase().includes(searchTerm.toLowerCase()) 
 );
 
   return (
