@@ -10,25 +10,27 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+  if (password !== confirmPassword) {
+    alert("Passwords do not match!");
+    return;
+  }
 
-    
-    localStorage.setItem("userName", name || "User");
-    localStorage.setItem("userEmail", email);
+  const users = JSON.parse(localStorage.getItem("users")) || []; //get acounts
 
-    console.log("New Account Created:", { name, email });
+  if (users.some(user => user.email === email)) {  //check if email already exist
+    alert("Account with this email already exists!");
+    return;
+  }
 
-    alert("Account created successfully!");
+  users.push({ name, email, password });  //add new user
+  localStorage.setItem("users", JSON.stringify(users));
 
-    
-    navigate("/browsepets");
-  };
+  alert("Account created successfully!");
+  navigate("/login");
+};
 
   return (
     <div className="signup-container">

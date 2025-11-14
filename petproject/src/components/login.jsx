@@ -8,17 +8,25 @@ const Login = () => {
   const [name, setName] = useState(""); 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    localStorage.setItem("userEmail", email);
-    localStorage.setItem("userName", name || "User");
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    console.log("Logged in as:", name, email);
+  const users = JSON.parse(localStorage.getItem("users")) || [];  //get accounts
 
-  
-    navigate("/browsepets");
-  };
+  const user = users.find(u => u.email === email && u.password === password); //find user using email and password
+
+  if (!user) {
+    alert("Account does not exist or password is incorrect!");
+    return;
+  }
+
+
+  sessionStorage.setItem("userName", user.name); //save user informations in session
+  sessionStorage.setItem("userEmail", user.email);
+
+  navigate("/browsepets");
+};
 
   return (
     <div className="login-container">

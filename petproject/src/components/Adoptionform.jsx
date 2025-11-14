@@ -1,38 +1,49 @@
+
 import React, { useState, useEffect } from "react";
 import "../styles/Adoptionform.css";
+import { useNavigate } from "react-router-dom";
 
-const Adoptionform= () => {
+const Adoptionform = () => {
   const [reason, setReason] = useState("");
   const [address, setAddress] = useState("");
   const [userInfo, setUserInfo] = useState({ name: "", email: "" });
 
-  useEffect(() => {
-    
-    const storedName = localStorage.getItem("userName");
-    const storedEmail = localStorage.getItem("userEmail");
+  const navigate = useNavigate();
+useEffect(() => {
+  const storedName = sessionStorage.getItem("userName");
+  const storedEmail = sessionStorage.getItem("userEmail");
 
-    if (storedName && storedEmail) {
-      setUserInfo({ name: storedName, email: storedEmail });
-    }
-  }, []);
+  if (!storedName || !storedEmail) {
+    alert("You must be logged in to access the adoption form.");
+    navigate("/login");
+    return;
+  }
+
+  setUserInfo({ name: storedName, email: storedEmail });
+}, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    alert("Your adoption application has been submitted! 🐶");
+
     console.log("Adoption Application Submitted:", {
       name: userInfo.name,
       email: userInfo.email,
       reason,
       address,
     });
-    alert("Your adoption application has been submitted! 🐶");
   };
 
   return (
     <div className="adoption-container">
       <div className="adoption-card">
         <h2>Adoption Application</h2>
+
         <form onSubmit={handleSubmit}>
-          <p><strong>Logged in as:</strong> {userInfo.name} ({userInfo.email})</p>
+          <p>
+            <strong>Logged in as:</strong> {userInfo.name} ({userInfo.email})
+          </p>
 
           <label>Address</label>
           <input
