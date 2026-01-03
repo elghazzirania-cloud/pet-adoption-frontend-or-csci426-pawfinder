@@ -1,11 +1,11 @@
 import express from "express";
-import mysql from "mysql";
+import mysql from "mysql2";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
 import jwt from "jsonwebtoken";
 
-import mysql from "mysql";
+//import mysql from "mysql";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -20,9 +20,7 @@ app.use(express.json());
 //     credentials: true,
 //   })
 // );
-app.use(
-  cors()
-);
+app.use(cors());
 app.use(cookieParser());
 
 // // Database connection
@@ -33,7 +31,6 @@ app.use(cookieParser());
 //   database: "petadoption",
 // });
 
-
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -41,7 +38,6 @@ const db = mysql.createConnection({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 });
-
 
 db.connect((err) => {
   if (err) {
