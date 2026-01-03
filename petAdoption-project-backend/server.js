@@ -6,8 +6,8 @@ import cookieParser from "cookie-parser";
 import jwt from "jsonwebtoken";
 
 //import mysql from "mysql";
-import dotenv from "dotenv";
-dotenv.config();
+// import dotenv from "dotenv";
+// dotenv.config();
 
 const salt = 10;
 
@@ -31,21 +31,21 @@ app.use(cookieParser());
 //   database: "petadoption",
 // });
 
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
+// const db = mysql.createConnection({
+//   host: process.env.MYSQLHOST || "localhost",
+//   port: process.env.MYSQLPORT || 3306,
+//   user: process.env.MYSQLUSER || "root",
+//   password: process.env.MYSQLPASSWORD || "",
+//   database: process.env.MYSQLDATABASE || "railway",
+// });
 
-db.connect((err) => {
-  if (err) {
-    console.log("DB connection error:", err);
-  } else {
-    console.log("Connected to DB");
-  }
-});
+// db.connect((err) => {
+//   if (err) {
+//     console.log("DB connection error:", err);
+//   } else {
+//     console.log("Connected to DB");
+//   }
+// });
 
 const port = process.env.PORT || 5000;
 

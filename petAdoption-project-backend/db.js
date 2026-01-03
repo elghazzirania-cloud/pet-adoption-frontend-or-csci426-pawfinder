@@ -1,5 +1,6 @@
-import mysql from "mysql";
+import mysql from "mysql2";
 import dotenv from "dotenv";
+import db from "./db.js"; // ⬅️ استيراد من db.js
 
 dotenv.config();
 
