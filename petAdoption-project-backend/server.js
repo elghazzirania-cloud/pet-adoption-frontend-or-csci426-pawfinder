@@ -20,7 +20,12 @@ app.use(express.json());
 //     credentials: true,
 //   })
 // );
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000", // ⬅️ ضع frontend URL هنا
+  credentials: true, // للسماح بالـ cookies
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(cookieParser());
 
 // // Database connection
