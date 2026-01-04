@@ -52,7 +52,7 @@ const Adoptionform = () => {
       reason,
     };
     axios
-      .post("https://discerning-radiance-production.up.railway.app/adopt", data)
+      .post("/adopt", data)
       .then((res) => {
         if (res.data.Status === "Success") {
           alert(res.data.Message);
