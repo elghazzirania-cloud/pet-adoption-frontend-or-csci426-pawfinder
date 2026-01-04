@@ -13,21 +13,37 @@ const salt = 10;
 
 const app = express();
 app.use(express.json());
+// Define ALL your allowed frontend URLs
+const allowedOrigins = [
+  'https://proactive-nature-production.up.railway.app', // Live frontend
+  'http://localhost:3000', // Local development
+  'http://localhost:5173'  // If using Vite
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, origin); // Send back the EXACT origin
+    } else {
+      console.log('Blocked by CORS:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
 // app.use(
 //   cors({
-//     origin: ["http://localhost:3000"],
-//     methods: ["POST", "GET"],
-//     credentials: true,
+//     origin: "proactive-nature-production.up.railway.app", // ⬅️ ضع frontend URL هنا
+//     credentials: true, // للسماح بالـ cookies
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
 //   })
 // );
-app.use(
-  cors({
-    origin: "proactive-nature-production.up.railway.app", // ⬅️ ضع frontend URL هنا
-    credentials: true, // للسماح بالـ cookies
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
 app.use(cookieParser());
 
 // // Database connection
