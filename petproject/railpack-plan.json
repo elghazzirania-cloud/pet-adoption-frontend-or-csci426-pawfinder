@@ -1,0 +1,5 @@
+{
+  "install": "npm install --legacy-peer-deps",
+  "build": "npm run build",
+  "caddy": "caddy run --config /Caddyfile --adapter caddyfile"
+}
