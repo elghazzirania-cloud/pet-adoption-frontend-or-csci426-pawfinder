@@ -20,12 +20,14 @@ app.use(express.json());
 //     credentials: true,
 //   })
 // );
-app.use(cors({
-  origin: "http://localhost:3000", // ⬅️ ضع frontend URL هنا
-  credentials: true, // للسماح بالـ cookies
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(
+  cors({
+    origin: "http://localhost:3000", // ⬅️ ضع frontend URL هنا
+    credentials: true, // للسماح بالـ cookies
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(cookieParser());
 
 // // Database connection
@@ -39,11 +41,11 @@ app.use(cookieParser());
 // ⚡ الحل: استخدم معلومات Railway مباشرة
 const db = mysql.createConnection({
   host: "mysql.railway.internal", // ⬅️ من معلوماتك
-  port: 3306,                     // ⬅️ من معلوماتك
-  user: "root",                   // ⬅️ من معلوماتك
+  port: 3306, // ⬅️ من معلوماتك
+  user: "root", // ⬅️ من معلوماتك
   password: "rUdjTQuBxIrakkVHZnQluiUvkkeZKAYJ", // ⬅️ من معلوماتك
-  database: "railway",            // ⬅️ من معلوماتك
-  ssl: { rejectUnauthorized: false }
+  database: "railway", // ⬅️ من معلوماتك
+  ssl: { rejectUnauthorized: false },
 });
 
 // أو إذا ما اشتغل، جرب الـ Public URL:
@@ -60,16 +62,16 @@ db.connect((err) => {
   if (err) {
     console.error("❌ DB Connection Error:", err.message);
     console.log("Trying alternative connection...");
-    
+
     // محاولة ثانية بالـ Public URL
     const db2 = mysql.createConnection({
       host: "metro.proxy.rlwy.net",
       port: 31247,
       user: "root",
       password: "rUdjTQuBxIrakkVHZnQluiUvkkeZKAYJ",
-      database: "railway"
+      database: "railway",
     });
-    
+
     db2.connect((err2) => {
       if (err2) {
         console.error("❌ Also failed:", err2.message);
@@ -154,7 +156,11 @@ app.post("/login", (req, res) => {
             const token = jwt.sign({ name, email }, "jwt-secret-key", {
               expiresIn: "1d",
             });
-            res.cookie("token", token);
+            res.cookie("token", token, {
+              httpOnly: true,
+              secure: true,
+              sameSite: "none",
+            });
             return res.json({ Status: "Success" });
           } else {
             return res.json({ Error: "password does not match" });
@@ -218,11 +224,11 @@ app.get("/", (req, res) => {
     timestamp: new Date().toISOString(),
     endpoints: {
       signup: "POST /signup",
-      login: "POST /login", 
+      login: "POST /login",
       pets: "GET /pets",
       adopt: "POST /adopt",
-      auth: "GET /auth"
-    }
+      auth: "GET /auth",
+    },
   });
 });
 
@@ -234,7 +240,7 @@ app.get("/health", (req, res) => {
         status: "ERROR",
         backend: "Running",
         database: "Disconnected",
-        error: err.message
+        error: err.message,
       });
     }
     return res.json({
@@ -243,7 +249,7 @@ app.get("/health", (req, res) => {
       database: "Connected",
       dbName: results[0].db,
       dbTime: results[0].time,
-      serverTime: new Date().toISOString()
+      serverTime: new Date().toISOString(),
     });
   });
 });
@@ -255,7 +261,7 @@ app.get("/test", (req, res) => {
     message: "✅ Backend is working!",
     service: "Pet Adoption API",
     environment: "Railway Production",
-    check: "All systems operational"
+    check: "All systems operational",
   });
 });
 
