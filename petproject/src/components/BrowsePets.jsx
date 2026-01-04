@@ -12,7 +12,7 @@ const BrowsePets = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/pets")
+      .get("https://discerning-radiance-production.up.railway.app/pets")
       .then((res) => {
         setPets(res.data);
         console.log("Pets data:", res.data);

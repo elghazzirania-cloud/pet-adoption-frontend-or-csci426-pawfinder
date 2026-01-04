@@ -23,7 +23,7 @@ const Signup = () => {
     console.log(values);
 
     axios
-      .post("http://localhost:5000/signup", values)
+      .post("https://discerning-radiance-production.up.railway.app/signup", values)
       .then((res) => {
         if (res.data.Status === "Success") {
           navigate("/login");

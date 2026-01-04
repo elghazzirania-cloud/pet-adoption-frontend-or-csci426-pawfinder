@@ -24,7 +24,7 @@ const Adoptionform = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/auth", { withCredentials: true })
+      .get("https://discerning-radiance-production.up.railway.app/auth", { withCredentials: true })
       .then((res) => {
         if (res.data.Status === "Success") {
           setEmail(res.data.email);
@@ -52,7 +52,7 @@ const Adoptionform = () => {
       reason,
     };
     axios
-      .post("http://localhost:5000/adopt", data)
+      .post("https://discerning-radiance-production.up.railway.app/adopt", data)
       .then((res) => {
         if (res.data.Status === "Success") {
           alert(res.data.Message);
